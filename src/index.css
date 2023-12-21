@@ -1,13 +1,268 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*
+{
+    padding: 0;
+    margin: 0;
+}
+.navbar1
+{
+    display: none;
+}
+.navbar
+{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-evenly;
+    margin-top: 2%;
+}
+.mylearning
+{
+    position: relative;
+    cursor: pointer;
+}
+.mylearning__pop
+{
+    position: absolute;
+    top: 150%;
+    background-color: white;
+    padding: 10px;
+    border: solid grey 2px;
+    border-radius: 5px;
+    width: 100px;
+    display: none;
+}
+.mylearning:hover .mylearning__pop
+{
+    display: block;
+}
+.logo h2
+{
+    color: #8a2be2;
+}
+.search 
+{
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border: solid black 1px;
+    border-radius: 20px;
+    width: 60%;
+}
+.search input
+{
+    border: none;
+    width: 100%;
+}
+.search input:focus
+{
+    outline: none;
+}
+.icons
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+.category
+{
+    display:flex;
+    justify-content: space-around;
+    border-bottom: solid black 1px;
+}
+.category p
+{
+    padding:5px 10px 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    background-color: blueviolet;
+    color: white;
+    border: solid blueviolet 1px;
+    cursor: pointer;
+}
+.category p:hover
+{
+    transition: 1s;
+    padding:5px 10px 5px 10px;
+    margin: 5px;
+    background-color: white;
+    border: solid blueviolet 1px;
+    border-radius: 20px;
+    color: blueviolet;
+}
+.sale img
+{
+    width: 100%;
+}
+.sale-card
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    top: 30%;
+    width: 45%;  
+    padding: 5%;
+    transition-delay: 2s;
+    animation-name: zoom;
+    animation-duration: 2s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes zoom
+{
+    0%
+    {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.recommended
+{
+    padding: 10px;
+    margin: 10px;
+}
+.recommended-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.container-card
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: 0;
+    justify-content: center;
+    flex-basis: 20%;
+    margin: 10px;
+    background-color: white;
+    height: fit-content;
+        /* box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2); */
+}
+.container-card img
+{
+    /* width: 150px;
+    height: 46%;
+    display: flex; */
+    width: 100%;
+    height: 20vh;
+    padding-bottom: 2%;
+}
+.container-card h4
+{
+    margin-bottom: 2%;
+}
+.container-card p
+{
+    font-size: 14px;
+}
+.topics
+{
+    padding: 20px;
+}
+.topics-container
+{
+    display: flex;
+    margin-top: 20px;  
+    flex-wrap: wrap;  
+    gap: 10px;
+}
+.topics p
+{
+    padding: 10px;
+    border: solid grey 2px;
+    flex-basis: 25%;
+    flex-grow: 1;
+}
+.topics-container p:hover
+{
+    background-color: grey;
+    color: white;
+}
+.footer
+{
+    background-color: black;
+    color: white;
+    padding: 30px;
+}
+.footer_container
+{
+    display: flex;
+    margin-bottom: 20px;
+}
+.footer_container p
+{
+    padding: 5px;
+    margin: 10px;
+}
+.footer_note
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) 
+{
+    body
+    {
+        font-size: 10px;
+    }    
+}
+
+@media screen  and (max-width: 600px)
+{
+    .container-card
+    {
+        flex-basis: 40%;
+    }
+    .category
+    {
+        display: none;
+    }
+    .icons, .search
+    {
+        display: none;
+    }
+    .sale-card
+    {
+        top: 15%;
+    }
+    .navbar1
+    {
+        position: sticky;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 25vh;
+        
+    }
+    .navbar1 h2
+    {
+        color: blueviolet;
+        position: sticky;
+    }
+
+    .navbar
+    {
+        display: none;
+    }
 }
